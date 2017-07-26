@@ -2,7 +2,7 @@
 Many collaborative framework for kotlin
 
 变更记录：
-1、创建文档， 2017/7/26/9:46
+1、创建计划文档， 2017/7/26/9:46
 
 背景：
 1、刚开始学习kotlin
