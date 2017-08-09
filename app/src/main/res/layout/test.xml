@@ -1,0 +1,59 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.lhj.lhjmcf.TestModel"
+        >
+
+    <data>
+
+        <!--<import type="com.lhj.lhjmcf.TestModel" />-->
+
+        <!--<import type="com.lhj.lhjmcf.TestModel1"/>-->
+
+        <variable
+                name="viewModel"
+                type="com.lhj.lhjmcf.TestModel"
+                />
+
+        <!--<variable-->
+                <!--name="user"-->
+                <!--type="com.lhj.lhjmcf.TestDataBindingActivity.User"-->
+                <!--/>-->
+
+    </data>
+
+    <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test model"
+                />
+
+        <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@{user.name}"-->
+                <!--android:gravity="center"-->
+                <!--/>-->
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.testStr}"
+                android:gravity="center"
+                />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="companion(半生对象)"
+                android:onClick="onClickCompanion"
+                />
+
+    </LinearLayout>
+</layout>
