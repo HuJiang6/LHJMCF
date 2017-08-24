@@ -28,19 +28,31 @@ android {
         }
     }
 
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.0', {
-//        exclude group: 'com.android.support', module: 'support-annotations'
-//    })
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:25.3.0'
-//    testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:design:25.3.0'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support:design:25.3.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     kapt 'com.android.databinding:compiler:2.3.1'
 
-    compile 'org.greenrobot:greendao:3.2.0'
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile "com.trello.rxlifecycle2:rxlifecycle-kotlin:$rxlifecycle"
+    compile "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rxlifecycle"
+
+    //Retrofit
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+
+    //RxJava
+    compile "io.reactivex:rxkotlin:$rxkotlin_version"
+    compile "io.reactivex:rxandroid:$rxandroid_version"
 }
