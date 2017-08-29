@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".TestDataBindingActivity"></activity>
+        <activity android:name=".base.ClassifyNoToolbarActivity"></activity>
     </application>
 
 </manifest>

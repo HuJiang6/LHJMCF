@@ -44,7 +44,7 @@ class ClassifyNoToolbarActivity : BaseActivity() {
                 throw IllegalArgumentException("can not find page fragmentName")
             }
             val fragmentClass = Class.forName(fragmentName)
-            val fragment = fragmentClass.newInstance() as BaseFragment
+            val fragment = fragmentClass.newInstance() as Fragment
 
             val args = data.getBundleExtra(GlobalConstant.EXTRA)
             if (args != null) {
@@ -56,7 +56,7 @@ class ClassifyNoToolbarActivity : BaseActivity() {
             trans.replace(R.id.classifyFragment, fragment)
             trans.commitAllowingStateLoss()
 
-            mFragment = WeakReference<Fragment>(fragment)
+            mFragment = WeakReference(fragment)
 
         } catch (e: ClassNotFoundException) {
             LogUtil.e("未找到对应的fragment")

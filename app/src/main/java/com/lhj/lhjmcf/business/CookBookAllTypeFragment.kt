@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 /**
  * Created by 陆胡江 on 2017/8/24.
@@ -12,7 +13,9 @@ import android.view.ViewGroup
  */
 class CookBookAllTypeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val textView: TextView = TextView(this.context)
+        textView.text = "CookBookAllTypeFragment"
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return textView
     }
 }

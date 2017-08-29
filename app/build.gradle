@@ -55,4 +55,6 @@ dependencies {
     //RxJava
     compile "io.reactivex:rxkotlin:$rxkotlin_version"
     compile "io.reactivex:rxandroid:$rxandroid_version"
+
+    compile project(path: ':lhjmcflibrary')
 }

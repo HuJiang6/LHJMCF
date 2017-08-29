@@ -1,6 +1,5 @@
 package com.lhj.lhjmcf
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
@@ -12,7 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import com.lhj.lhjmcf.business.CookBookDetailListFragment
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -39,9 +38,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
         hello.setOnClickListener {
-            Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show()
-            val intent : Intent = Intent(this, TestDataBindingActivity::class.java)
-            this.startActivity(intent)
+//            Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(this, TestDataBindingActivity::class.java)
+//            this.startActivity(intent)
+
+            CookBookDetailListFragment.loadCookBookDetailListFragment(this)
         }
 
 //        val hello = findViewById(R.id.hello) as TextView
