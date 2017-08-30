@@ -6,6 +6,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import rx.Observable
+import rx.Subscriber
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
+import rx.subscriptions.CompositeSubscription
 
 
 /**
@@ -13,6 +18,7 @@ import android.view.ViewGroup
  * Desc:
  */
 open class BaseFragment : Fragment() {
+    val mCompositeSubscription: CompositeSubscription = CompositeSubscription()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -146,5 +152,13 @@ open class BaseFragment : Fragment() {
 
     fun onBackPressed(): Boolean {
         return false
+    }
+
+
+    open fun <M> addSubscription(observable: Observable<M>, subscriber: Subscriber<M>) {
+        mCompositeSubscription.add(
+                observable.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(subscriber))
     }
 }
